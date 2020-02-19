@@ -1,6 +1,6 @@
 const Optional = require('optional-js')
 
-const {ComputeLoan, createLoanerWithPromise, createLoanerWithWrappedPromise} = require('./ComputeLoan')
+const {createLoanerWithPromise, createLoanerWithWrappedPromise} = require('./ComputeLoan')
 
 class ComputeLoans {
     #loans
@@ -11,17 +11,19 @@ class ComputeLoans {
 
     computeIfAbsent(key, supplier, isSupplierPromise = true) {
         return Optional.ofNullable(this.#loans.get(key))
-            .map(loan => loan.get())
+            .map(loan => loan.computeIfAbsent())
             .orElseGet(() => {
                 const loan = isSupplierPromise ? createLoanerWithPromise(supplier) : createLoanerWithWrappedPromise(supplier)
                 this.#loans.set(key, loan)
-                return loan.get()
+                return loan.computeIfAbsent()
             })
     }
 
     read(key) {
         return Optional.ofNullable(this.#loans.get(key))
-            .map(loan => loan.get())
+            .map(loan => loan.getDataLoan())
+            .map(dataLoan => dataLoan.isValid() ? dataLoan.read() : undefined)
+            .orElse(undefined)
     }
 
     delete(key) {

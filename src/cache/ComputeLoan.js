@@ -46,29 +46,32 @@ function createPromiseExecutor(supplier, durationMsecs) {
 const HALF_HOUR = 30 * 60 * 1000
 
 class ComputeLoan {
-    #durationMsecs
     #promise
     #computePromise
     #resultState
+    #dataLoan
 
     constructor(executeSupplier) {
         this.#promise = undefined
+        this.#dataLoan = new DataLoan(undefined, 0)
         this.#computePromise = async () => {
             console.log('Creating new promise')
             this.#resultState = ResultState.None
             return executeSupplier()
                 .then(dataLoan => {
                     this.#resultState = ResultState.Success
+                    this.#dataLoan = dataLoan
                     return dataLoan
                 })
                 .catch(e => {
                     this.#resultState = ResultState.Failure
+                    this.#dataLoan = new DataLoan(undefined, 0)
                     return Promise.reject(e)
                 })
         }
     }
 
-    async getAwaitImpl() {
+    async computeIfAbsentAwait() {
         if (this.#promise) {
             try {
                 const dataLoan = await this.#promise
@@ -95,7 +98,7 @@ class ComputeLoan {
         }
     }
 
-    async get() {
+    computeIfAbsent() {
         if (!this.#promise) {
             this.#promise = this.#computePromise()
         }
@@ -111,6 +114,10 @@ class ComputeLoan {
                 return this.#promise
             })
             .then(dataLoan => dataLoan.read())
+    }
+
+    getDataLoan() {
+        return this.#dataLoan
     }
 }
 

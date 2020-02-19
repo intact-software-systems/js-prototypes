@@ -48,14 +48,11 @@ const keyThree = '3'
 loans.computeIfAbsent(keyOne, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
 loans.computeIfAbsent(keyOne, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
 loans.computeIfAbsent(keyTwo, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
-loans.computeIfAbsent(keyThree, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
 loans.computeIfAbsent(keyTwo, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
 loans.computeIfAbsent(keyThree, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
-loans.computeIfAbsent(keyOne, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
-loans.computeIfAbsent(keyOne, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
-loans.computeIfAbsent(keyTwo, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
-loans.computeIfAbsent(keyOne, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
+loans.computeIfAbsent(keyThree, () => axios.get('https://api.chucknorris.io/jokes/random')).then(result => console.log(JSON.stringify(result.data)))
 
+console.log(loans.read(keyOne))
 
 
 

@@ -23,9 +23,9 @@ const computeRandom = () => Math.random() > 0.49 ? computeSuccess() : computeErr
 const loan = new ComputeLoan(computeRandom)
 
 
-loan.get().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.get().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.get().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.get().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.get().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.get().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
+loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
+loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
+loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
+loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
+loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
+loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
