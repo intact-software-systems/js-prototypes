@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {Suspense, useState} from 'react'
 
 const {ComputeLoans} = require('./cache/ComputeLoans')
 
@@ -42,13 +42,15 @@ export default function ChuckNorris() {
             Fetch Joke
         </button>
 
-        {
-            jokes.map((joke, index) => {
-                return <div key={index}>
-                    <br/>
-                    {index + ': ' + joke}
-                </div>
-            })
-        }
+        <Suspense fallback={<h1>Loading jokes...</h1>}>
+            {
+                jokes.map((joke, index) => {
+                    return <div key={index}>
+                        <br/>
+                        {index + ': ' + joke}
+                    </div>
+                })
+            }
+        </Suspense>
     </div>
 }
