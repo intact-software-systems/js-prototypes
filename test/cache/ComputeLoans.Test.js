@@ -1,7 +1,6 @@
 const {ComputeLoans} = require('../../src/cache/ComputeLoans')
 
 const axios = require('axios')
-
 axios.interceptors.request
     .use(config => {
         console.log('REQUEST: ' + config.method.toUpperCase() + ' ' + config.url + ' ' + config.data + ' ' + JSON.stringify(config.headers))

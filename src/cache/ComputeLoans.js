@@ -26,8 +26,8 @@ class ComputeLoans {
             .orElse(undefined)
     }
 
-    delete(key) {
-        return this.#loans.delete(key)
+    loanMap() {
+        return this.#loans
     }
 }
 

@@ -1,8 +1,7 @@
 require('log-timestamp')
 
-const CircularSubArray = require('test/carousel/CircularSubArray')
-
-const allChannels = require('samples/channels.json')
+const CircularSubArray = require('../../src/carousel/CircularSubArray')
+const allChannels = require('../../samples/channels.json')
 
 const categoryChannels = allChannels[0].visibleChannels
 

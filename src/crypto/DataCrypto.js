@@ -2,23 +2,22 @@ const crypto = require('crypto')
 const algorithm = 'aes-256-cbc'
 const encoding = 'hex'
 
-var key = undefined
+let key = undefined
 const dataValidityPeriodMilliseconds = 24 * 60 * 60 * 1000
 
 class DataCrypto {
     static getKey() {
         if (!key) {
-            key = require('../config/ConfigRepository').config.cryptoKey
+            throw 'undefined key'
         }
         return key
     }
 
-    static getConfiguredCryptoKey() {
-        return require('./ConfigRepository').config.cryptoKey
-    }
-
     static initializeKey(cryptoKey) {
-        key = !cryptoKey ? DataCrypto.getConfiguredCryptoKey() : cryptoKey
+        if (!cryptoKey) {
+            throw 'undefined key'
+        }
+        key = cryptoKey
     }
 
     static encrypt(json) {

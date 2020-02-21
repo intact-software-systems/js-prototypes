@@ -1,8 +1,7 @@
 require('log-timestamp')
 
-const Carousel = require('test/carousel/CarouselTwe')
-
-const allChannels = require('samples/channels.json')
+const Carousel = require('../../src/carousel/CarouselTwe')
+const allChannels = require('../../samples/channels.json')
 
 const categoryChannels = allChannels[0].visibleChannels
 
