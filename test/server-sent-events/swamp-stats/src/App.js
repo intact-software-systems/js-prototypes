@@ -1,41 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React from 'react'
+import EventStream from './EventStream'
+import ChuckNorris from './ChuckNorris'
+
+import './App.css'
 
 export default function App() {
-    const [ nests, setNests ] = useState([]);
-    const [ listening, setListening ] = useState(false);
-
-    useEffect( () => {
-        if (!listening) {
-            const events = new EventSource('http://localhost:4000/events');
-            events.onmessage = (event) => {
-                const parsedData = JSON.parse(event.data);
-
-                setNests((nests) => nests.concat(parsedData));
-            };
-
-            setListening(true);
-        }
-    }, [listening, nests]);
-
-    return <table className="stats-table">
-        <thead>
-        <tr>
-            <th>Momma</th>
-            <th>Eggs</th>
-            <th>Temperature</th>
-        </tr>
-        </thead>
-        <tbody>
-        {
-            nests.map((nest, i) =>
-                <tr key={i}>
-                    <td>{nest.momma}</td>
-                    <td>{nest.eggs}</td>
-                    <td>{nest.temperature} ℃</td>
-                </tr>
-            )
-        }
-        </tbody>
-    </table>;
+    return <div>
+        <EventStream/>
+        <ChuckNorris/>
+    </div>
 }
