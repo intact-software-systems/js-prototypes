@@ -1,3 +1,4 @@
+const {createLoanerWithWrappedPromise} = require('../../src/cache/ComputeLoan')
 const {ComputeLoan} = require('../../src/cache/ComputeLoan')
 
 let cnt = 0
@@ -20,12 +21,12 @@ function computeSuccess() {
 
 const computeRandom = () => Math.random() > 0.49 ? computeSuccess() : computeError()
 
-const loan = new ComputeLoan(computeRandom)
+const loan = createLoanerWithWrappedPromise(computeRandom)
 
 
-loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
-loan.computeIfAbsent().then(data => console.log("Success: " + data)).catch(e => console.log("Error: " + e))
+loan.computeIfAbsent().then(data => console.log('Success: ' + data)).catch(e => console.log('Error: ' + e))
+loan.computeIfAbsent().then(data => console.log('Success: ' + data)).catch(e => console.log('Error: ' + e))
+loan.computeIfAbsent().then(data => console.log('Success: ' + data)).catch(e => console.log('Error: ' + e))
+loan.computeIfAbsent().then(data => console.log('Success: ' + data)).catch(e => console.log('Error: ' + e))
+loan.computeIfAbsent().then(data => console.log('Success: ' + data)).catch(e => console.log('Error: ' + e))
+loan.computeIfAbsent().then(data => console.log('Success: ' + data)).catch(e => console.log('Error: ' + e))
