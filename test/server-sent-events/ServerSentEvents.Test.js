@@ -48,6 +48,6 @@ app.get('/events', function (req, res, next) {
 })
 app.get('/status', (req, res) => res.json({clients: clients.length}))
 
-server.listen(4000, () => {
+server.listen(5000, () => {
     console.log(`Server started on port ${server.address().port} :)`)
 })

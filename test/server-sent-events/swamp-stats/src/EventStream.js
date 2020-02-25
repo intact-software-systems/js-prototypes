@@ -6,11 +6,13 @@ export default function EventStream() {
 
     useEffect(() => {
         if (!listening) {
-            const events = new EventSource('http://localhost:4000/events')
+            const events = new EventSource('http://localhost:5000/events')
             events.onmessage = (event) => {
                 const parsedData = JSON.parse(event.data)
 
-                setNests((nests) => nests.concat(parsedData))
+                console.log(event.data)
+
+                setNests(nests => nests.concat(parsedData))
             }
 
             events.onerror = event => {
@@ -19,7 +21,7 @@ export default function EventStream() {
 
             setListening(true)
         }
-    }, [listening, nests])
+    }, [listening])
 
     return <table className="stats-table">
         <thead>

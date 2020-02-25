@@ -30,7 +30,3 @@ export class ComputeLoans {
         return this.#loans
     }
 }
-
-// module.exports = {
-//     ComputeLoans
-// }
