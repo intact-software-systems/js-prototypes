@@ -1,27 +1,28 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 
 export default function EventStream() {
     const [nests, setNests] = useState([])
-    const [listening, setListening] = useState(false)
 
-    useEffect(() => {
-        if (!listening) {
-            const events = new EventSource('http://localhost:5000/events')
-            events.onmessage = (event) => {
-                const parsedData = JSON.parse(event.data)
+    const [events] = useState(() => {
+        const events = new EventSource('http://localhost:5000/events')
+        events.onmessage = (event) => {
+            const parsedData = JSON.parse(event.data)
 
-                console.log(event.data)
+            console.log(event.data)
 
-                setNests(nests => nests.concat(parsedData))
-            }
-
-            events.onerror = event => {
-                console.log('error: ' + event.data)
-            }
-
-            setListening(true)
+            setNests(nests => nests.concat(parsedData))
         }
-    }, [listening])
+
+        events.onerror = event => {
+            console.log('error: ' + event.data)
+        }
+
+        events.onclose = () => {
+            console.log('connection closed ')
+        }
+
+        return events
+    })
 
     return <table className="stats-table">
         <thead>
