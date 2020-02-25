@@ -14,11 +14,13 @@ wss.on('connection', ws => {
         //log the received message and send it back to the client
         console.log('received: %s', message)
 
-        const broadcastRegex = /^broadcast:/
+        const serverRegexp = /^server:/
 
-        if (broadcastRegex.test(message)) {
-            message = message.replace(broadcastRegex, '')
-
+        if (serverRegexp.test(message)) {
+            message = message.replace(serverRegexp, '')
+            ws.send(`Hello, you sent -> ${message}`)
+        }
+        else {
             //send back the message to the other clients
             wss.clients
                 .forEach(client => {
@@ -26,9 +28,6 @@ wss.on('connection', ws => {
                         client.send(`Hello, broadcast message -> ${message}`)
                     }
                 })
-            ws.send(`Hello, you sent -> ${message}`)
-        }
-        else {
             ws.send(`Hello, you sent -> ${message}`)
         }
     })
