@@ -1,6 +1,5 @@
 const express = require('express')
 const path = require('path')
-const favicon = require('serve-favicon')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
@@ -22,7 +21,6 @@ module.exports = {
             return console.log(value)
         })
 
-        // app.use(favicon(path.join(__dirname, '../public', 'favicon.ico')))
         app.use(cors())
         app.use(bodyParser.json())
         app.use(bodyParser.urlencoded({extended: false}))
