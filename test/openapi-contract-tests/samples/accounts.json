@@ -1,0 +1,141 @@
+{
+  "accounts": [
+    {
+      "accountNumber": {
+        "bban": "240000108",
+        "iban": "NO36240000108"
+      },
+      "status": "A",
+      "customerId": "50000",
+      "agreementId": "12345",
+      "countryCode": "NO",
+      "currencyCode": "NOK",
+      "profitCenter": "profit centre",
+      "openDate": "2020-01-16",
+      "productDetails": {
+        "productId": "12345",
+        "productType": "CASA"
+      },
+      "auditDetails": {
+        "createdBy": "AB62939",
+        "createdOnTime": "2020-04-17T10:28:08.624495",
+        "version": 1
+      }
+    },
+    {
+      "accountNumber": {
+        "bban": "36240000107",
+        "iban": "NO36240000107"
+      },
+      "status": "A",
+      "customerId": "51615380000",
+      "agreementId": "509895116282702412",
+      "countryCode": "NO",
+      "currencyCode": "NOK",
+      "profitCenter": "50500",
+      "openDate": "2020-04-17",
+      "productDetails": {
+        "productId": "508482784807684680",
+        "productType": "CASA"
+      },
+      "balances": [
+        {
+          "type": "ACCT",
+          "amount": 0,
+          "amountLocal": 0
+        }
+      ],
+      "auditDetails": {
+        "createdBy": "E213047",
+        "createdOnTime": "2020-04-17T08:23:25",
+        "version": 1
+      }
+    },
+    {
+      "accountNumber": {
+        "bban": "96882507950",
+        "iban": "NO9896882507950"
+      },
+      "status": "A",
+      "customerId": "5000",
+      "agreementId": "12345",
+      "countryCode": "NO",
+      "currencyCode": "NOK",
+      "profitCenter": "1234",
+      "openDate": "2020-04-17",
+      "accountConditionList": [
+        {
+          "condition": "DEFACC",
+          "description": "Default Account",
+          "origin": "S"
+        }
+      ],
+      "productDetails": {
+        "productId": "4444",
+        "productType": "CASA"
+      },
+      "auditDetails": {
+        "createdBy": "ET34485",
+        "createdOnTime": "2020-04-17T08:23:25",
+        "version": 1
+      }
+    },
+    {
+      "accountNumber": {
+        "bban": "96882507951",
+        "iban": "NO9896882507951"
+      },
+      "status": "A",
+      "customerId": "5000",
+      "agreementId": "5555",
+      "countryCode": "NO",
+      "currencyCode": "NOK",
+      "profitCenter": "1234",
+      "openDate": "2020-04-17",
+      "terminationDate": "2020-04-17",
+      "productDetails": {
+        "productId": "4444",
+        "productType": "CASA"
+      },
+      "auditDetails": {
+        "createdBy": "ET34485",
+        "createdOnTime": "2020-04-17T08:23:25",
+        "version": 1
+      }
+    },
+    {
+      "accountNumber": {
+        "bban": "96882507952",
+        "iban": "NO9896882507952"
+      },
+      "status": "A",
+      "customerId": "51615380000",
+      "agreementId": "509895116282702412",
+      "countryCode": "NO",
+      "currencyCode": "NOK",
+      "profitCenter": "50500",
+      "openDate": "2020-04-17",
+      "productDetails": {
+        "productId": "508482784807684680",
+        "productType": "CASA"
+      },
+      "balances": [
+        {
+          "type": "ACCT",
+          "amount": -1020,
+          "amountLocal": -1020
+        },
+        {
+          "type": "CL1",
+          "amount": -1000,
+          "amountLocal": -1000
+        }
+      ],
+      "auditDetails": {
+        "createdBy": "E213047",
+        "createdOnTime": "2020-04-17T08:23:25",
+        "version": 1
+      }
+    }
+  ]
+}

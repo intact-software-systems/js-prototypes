@@ -1,0 +1,1260 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "contact": {},
+    "license": {
+      "name": "Apache 2.0 License",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "",
+    "version": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local test server"
+    }
+  ],
+  "paths": {
+    "/account/changeProduct": {
+      "patch": {
+        "tags": [
+          "Account Operations"
+        ],
+        "summary": "Change Account Product",
+        "operationId": "changeProduct",
+        "parameters": [
+          {
+            "name": "X-EVRY-ESB-USERSESSION",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ESB-SECURITYTOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-CLIENT-CLIENTNAME",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-ID",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/productChange"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "412": {
+            "description": "Error responses: <br />3064: Account does not exist<br />3065: Account does not belong to the given Product Type<br />",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error responses: <br />code: 605, message: Input validation error<br />ApplicationSpecific validationExceptions: <br />3503 : productType must be provided<br />3503 : productType must be provided<br />3515 : productType length can not exceed 18 characters<br />3502 : productId must be provided<br />3514 : productId length can not exceed 18 characters<br />3511 : iban must be provided<br />3510 : iban must match \"[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}\"<br />3506 : glDimension must be provided<br />3508 : dimensionValue must be provided<br />3521 : dimensionValue length can not exceed 35 characters<br />3507 : dimensionType must be provided<br />3520 : dimensionType length can not exceed 8 characters<br />3522 : Version ticket must be provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/update": {
+      "patch": {
+        "tags": [
+          "Account Operations"
+        ],
+        "summary": "Update account",
+        "operationId": "update",
+        "parameters": [
+          {
+            "name": "X-EVRY-ESB-USERSESSION",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ESB-SECURITYTOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-CLIENT-CLIENTNAME",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-ID",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "412": {
+            "description": "Error responses: <br /> 3064: Account does not exist <br /> 3065 : Account does not belong to the given Product Type <br />",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error responses:  <br />code: 605, message: Input validation error <br />ApplicationSpecific validationExceptions:  <br />3511 : iban must be provided <br />3510 : iban must match \"[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}\" <br />3512 : customerId must be provided <br />3518 : customerId length can not exceed 35 characters <br />3505 : agreementId must be provided <br />3517 : agreementId length can not exceed 18 characters <br />3503 : productType must be provided <br />3515 : productType length can not exceed 18 characters <br />3504 : profitCenter must be provided <br />3516 : profitCenter length can not exceed 18 characters <br />3522 : Version ticket must be provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account": {
+      "get": {
+        "tags": [
+          "Account Operations"
+        ],
+        "summary": "List accounts",
+        "operationId": "list",
+        "parameters": [
+          {
+            "name": "X-EVRY-ESB-USERSESSION",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ESB-SECURITYTOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-CLIENT-CLIENTNAME",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-ID",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "currencyCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "productType",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "CASA",
+                "INTERNAL"
+              ]
+            }
+          },
+          {
+            "name": "profitCenter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountStatus",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "A",
+                "C",
+                "I"
+              ]
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "500"
+            }
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Use nextPageToken from initial response as pageToken in the subsequent request. In a subsequent request no additional query parameters to pageToken is allowed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountListResponse"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Error responses: <br />code: 605, message: Input validation error<br />code: 3068, message: Invalid pageToken<br />ApplicationSpecific validationExceptions: <br />3513 : currencyCode length can not exceed 3 characters<br />3518 : customerId length can not exceed 35 characters<br />3515 : productType length can not exceed 18 characters<br />3516 : profitCenter length can not exceed 18 characters<br />3523 : Page size must be between (including) 0 and 500<br />3524 : In a subsequent request no additional query parameters to pageToken is allowed<br />3523 : accountStatus length can not exceed 1 characters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Account Operations"
+        ],
+        "summary": "Open account",
+        "operationId": "open",
+        "parameters": [
+          {
+            "name": "X-EVRY-ESB-USERSESSION",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ESB-SECURITYTOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-CLIENT-CLIENTNAME",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-ID",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/account"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Error responses: <br />code: 3001, message: Account Number already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error responses: <br />code: 610, message: Invalid date format<br />code: 605, message: Input validation error<br />ApplicationSpecific validationExceptions: <br />3504 : profitCenter must be provided<br />3516 : profitCenter length can not exceed 18 characters<br />3505 : agreementId must be provided<br />3517 : agreementId length can not exceed 18 characters<br />3503 : productType must be provided<br />3515 : productType length can not exceed 18 characters<br />3502 : productId must be provided<br />3514 : productId length can not exceed 18 characters<br />3501 : countryCode must be provided<br />3509 : countryCode length can not exceed 2 characters<br />3500 : currencyCode must be provided<br />3513 : currencyCode length can not exceed 3 characters<br />3511 : iban must be provided<br />3510 : iban must match \"[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}\"<br />3506 : glDimension must be provided<br />3507 : dimensionType must be provided<br />3520 : dimensionType length can not exceed 8 characters<br />3508 : dimensionValue must be provided<br />3521 : dimensionValue length can not exceed 35 characters<br />3512 : customerId must be provided<br />3519 : accountDescription length can not exceed 35 characters<br />3518 : customerId length can not exceed 35 characters<br />3601 : Interest sub type code cannot exceed 18 characters<br />3602 : Interest sub type code must be provided<br />3603 : Interest type cannot exceed 18 characters<br />3604 : Interest type must be provided<br />3605 : Interest rate must be provided<br />3606 : Interest rates can at most have 4 integer digits and 5 decimal digits (min -9999.99999, max 9999.99999)<br />3607 : Interest valid from date must be provided<br />3608 : Percentage must be between (including) 0 and 100<br />3609 : Day count convention must be either CAL, 365 or 360<br />3610 : Amount threshold must be a non negative number<br />3701 : Reference type code must be provided<br />3702 : Reference type code cannot exceed 35 characters<br />3703 : The provided adjustment frequency is not a valid frequency<br />3704 : Adjustment frequency must be provided<br />3705 : Next adjustment date must be provided<br />3706 : Reference rate issue date must be provided<br />3707 : Fixed days must be provided<br />3708 : Fixed days must be within constraints (min 0, max 2)<br />3709 : Fixed days counting convention must be either CAL or BANK_DAYS<br />3710 : Fixed days counting must be provided<br />3711 : Calculate negative interest rate must be provided<br />3712 : Calculate negative customer rate must be provided<br />3713 : Collars (cap and floor) must be within constraints  (min -9999.99999, max 9999.99999)<br />",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/{iban}": {
+      "get": {
+        "tags": [
+          "Account Operations"
+        ],
+        "summary": "Read account details",
+        "operationId": "read",
+        "parameters": [
+          {
+            "name": "X-EVRY-ESB-USERSESSION",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ESB-SECURITYTOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-CLIENT-CLIENTNAME",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-ID",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "049890976193784678"
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "NOK"
+          },
+          {
+            "name": "X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "NO"
+          },
+          {
+            "name": "iban",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountReadResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Error responses: <br />code: 3064, message: Account does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ResponseError": {
+        "type": "object",
+        "properties": {
+          "system": {
+            "type": "string",
+            "example": "LED"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "applicationSpecific": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "GLDimension": {
+        "required": [
+          "dimensionType",
+          "dimensionValue"
+        ],
+        "type": "object",
+        "properties": {
+          "dimensionType": {
+            "maxLength": 8,
+            "minLength": 0,
+            "type": "string"
+          },
+          "dimensionValue": {
+            "maxLength": 35,
+            "minLength": 0,
+            "type": "string"
+          }
+        }
+      },
+      "productChange": {
+        "required": [
+          "glDimensions",
+          "iban",
+          "newProductId",
+          "productType",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "iban": {
+            "pattern": "[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}",
+            "type": "string"
+          },
+          "newProductId": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "productType": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string",
+            "enum": [
+              "CASA"
+            ]
+          },
+          "glDimensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GLDimension"
+            }
+          },
+          "version": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "AccountUpdateRequest": {
+        "required": [
+          "agreementId",
+          "customerId",
+          "iban",
+          "productType",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "iban": {
+            "pattern": "[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}",
+            "type": "string"
+          },
+          "customerId": {
+            "maxLength": 35,
+            "minLength": 0,
+            "type": "string"
+          },
+          "agreementId": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "productType": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string",
+            "enum": [
+              "CASA",
+              "INTERNAL"
+            ]
+          },
+          "profitCentre": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "AccountCondition": {
+        "required": [
+          "condition",
+          "description",
+          "origin"
+        ],
+        "type": "object",
+        "properties": {
+          "condition": {
+            "type": "string",
+            "enum": [
+              "INTCLCNO",
+              "DEPBLOCK",
+              "WDBLOCK",
+              "CAGBLOCK",
+              "ACTLOSS",
+              "EXREMIND",
+              "IMPLOSS",
+              "REPDEBC",
+              "SENDEBC",
+              "STODEBC",
+              "DEFACC",
+              "OFFBAL",
+              "CASHPOOL"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "M",
+              "S"
+            ]
+          }
+        }
+      },
+      "AccountList": {
+        "required": [
+          "countryCode",
+          "currencyCode",
+          "customerId",
+          "openDate",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "accountNumber": {
+            "$ref": "#/components/schemas/AccountNumber"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "A",
+              "C",
+              "I"
+            ]
+          },
+          "customerId": {
+            "type": "string"
+          },
+          "agreementId": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "currencyCode": {
+            "type": "string"
+          },
+          "profitCenter": {
+            "type": "string"
+          },
+          "openDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "terminationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "accountConditionList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountCondition"
+            }
+          },
+          "productDetails": {
+            "$ref": "#/components/schemas/ProductDetails"
+          },
+          "balances": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Balance"
+            }
+          },
+          "notifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Notification"
+            }
+          },
+          "auditDetails": {
+            "$ref": "#/components/schemas/AuditDetails"
+          }
+        }
+      },
+      "AccountListResponse": {
+        "type": "object",
+        "properties": {
+          "accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountList"
+            }
+          },
+          "nextPageToken": {
+            "type": "string"
+          }
+        }
+      },
+      "AccountNumber": {
+        "type": "object",
+        "properties": {
+          "bban": {
+            "type": "string"
+          },
+          "iban": {
+            "type": "string"
+          }
+        }
+      },
+      "AuditDetails": {
+        "required": [
+          "createdBy",
+          "createdOnTime",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "createdBy": {
+            "type": "string"
+          },
+          "createdOnTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedBy": {
+            "type": "string"
+          },
+          "modifiedOnTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "Balance": {
+        "required": [
+          "amount",
+          "amountLocal",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "ACCT",
+              "CL1",
+              "BLOCK"
+            ]
+          },
+          "amount": {
+            "type": "number"
+          },
+          "amountLocal": {
+            "type": "number"
+          }
+        }
+      },
+      "Notification": {
+        "required": [
+          "createdDate",
+          "description",
+          "status",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "S",
+              "M"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "A",
+              "C",
+              "I"
+            ]
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ProductDetails": {
+        "required": [
+          "productId",
+          "productType"
+        ],
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "string"
+          },
+          "productType": {
+            "type": "string",
+            "enum": [
+              "CASA",
+              "INTERNAL"
+            ]
+          }
+        }
+      },
+      "AccountReadResponse": {
+        "required": [
+          "auditDetails",
+          "countryCode",
+          "currencyCode",
+          "customerId",
+          "openDate",
+          "productDetails",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "accountNumber": {
+            "$ref": "#/components/schemas/AccountNumber"
+          },
+          "description": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "A",
+              "C",
+              "I"
+            ]
+          },
+          "agreementId": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "openDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "currencyCode": {
+            "type": "string"
+          },
+          "customerId": {
+            "type": "string"
+          },
+          "terminationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "profitCenter": {
+            "type": "string"
+          },
+          "productDetails": {
+            "$ref": "#/components/schemas/ProductDetails"
+          },
+          "interestCalculationInformation": {
+            "$ref": "#/components/schemas/InterestCalculationInformation"
+          },
+          "accountConditionList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountCondition"
+            }
+          },
+          "notifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Notification"
+            }
+          },
+          "balances": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Balance"
+            }
+          },
+          "cashPoolInformation": {
+            "$ref": "#/components/schemas/CashPoolInformation"
+          },
+          "auditDetails": {
+            "$ref": "#/components/schemas/AuditDetails"
+          }
+        }
+      },
+      "CashPoolInformation": {
+        "required": [
+          "accountType",
+          "hierarchyCreatedDate",
+          "hierarchyType",
+          "parentAccountNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "accountType": {
+            "type": "string",
+            "enum": [
+              "MCLA",
+              "GCA",
+              "CRA",
+              "PMA",
+              "ICA",
+              "OPA",
+              "ICP",
+              "OBS"
+            ]
+          },
+          "hierarchyType": {
+            "type": "string",
+            "enum": [
+              "SINGLECURRENCY",
+              "MULTICURRENCY"
+            ]
+          },
+          "parentAccountNumber": {
+            "$ref": "#/components/schemas/ParentAccountNumber"
+          },
+          "hierarchyCreatedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hierarchyLastUpdatedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "InterestCalculationInformation": {
+        "type": "object",
+        "properties": {
+          "interestCalculationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "interestCalculationTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastTransactionDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "turnOverHistoryDate": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "ParentAccountNumber": {
+        "required": [
+          "parentBban",
+          "parentIban"
+        ],
+        "type": "object",
+        "properties": {
+          "parentBban": {
+            "type": "string"
+          },
+          "parentIban": {
+            "type": "string"
+          }
+        }
+      },
+      "account": {
+        "required": [
+          "agreementId",
+          "countryCode",
+          "currencyCode",
+          "customerId",
+          "glDimension",
+          "iban",
+          "productId",
+          "productType",
+          "profitCenter"
+        ],
+        "type": "object",
+        "properties": {
+          "currencyCode": {
+            "maxLength": 3,
+            "minLength": 0,
+            "type": "string"
+          },
+          "countryCode": {
+            "maxLength": 2,
+            "minLength": 0,
+            "type": "string"
+          },
+          "productId": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "productType": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "profitCenter": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "agreementId": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "customerId": {
+            "maxLength": 35,
+            "minLength": 0,
+            "type": "string"
+          },
+          "openedDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "accountDescription": {
+            "maxLength": 35,
+            "minLength": 0,
+            "type": "string"
+          },
+          "iban": {
+            "pattern": "[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}",
+            "type": "string"
+          },
+          "glDimension": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GLDimension"
+            }
+          },
+          "interestSubTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/interestSubType"
+            }
+          }
+        }
+      },
+      "interestSubType": {
+        "required": [
+          "interestSubTypeCode",
+          "interestType",
+          "rate",
+          "validFrom"
+        ],
+        "type": "object",
+        "properties": {
+          "interestSubTypeCode": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "interestType": {
+            "maxLength": 18,
+            "minLength": 0,
+            "type": "string"
+          },
+          "numerator": {
+            "pattern": "CAL|360|365",
+            "type": "string"
+          },
+          "denominator": {
+            "pattern": "CAL|360|365",
+            "type": "string"
+          },
+          "rate": {
+            "type": "number"
+          },
+          "isOverridden": {
+            "type": "boolean"
+          },
+          "validFrom": {
+            "type": "string",
+            "format": "date"
+          },
+          "validTo": {
+            "type": "string",
+            "format": "date"
+          },
+          "tierAmountThreshold": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tierPercentageThreshold": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "calculationAmountThreshold": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "calculationPercentageThreshold": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "referenceInterestType": {
+            "$ref": "#/components/schemas/referenceInterestType"
+          }
+        }
+      },
+      "referenceInterestType": {
+        "required": [
+          "adjustmentFrequency",
+          "calculateNegativeCustomerRate",
+          "calculateNegativeInterestRate",
+          "fixedDays",
+          "fixedDaysCountConvention",
+          "nextAdjustmentDate",
+          "referenceRateIssueDate",
+          "referenceTypeCode"
+        ],
+        "type": "object",
+        "properties": {
+          "referenceTypeCode": {
+            "maxLength": 35,
+            "minLength": 0,
+            "type": "string"
+          },
+          "referenceTypeOverridden": {
+            "type": "boolean"
+          },
+          "adjustmentFrequency": {
+            "pattern": "DAILY|WEEKLY|FORTNIGHTLY|MONTHLY|QUARTERLY|HALF_YEARLY|YEARLY|TWO_YEARS|THREE_YEARS|FIVE_YEARS|TEN_YEARS",
+            "type": "string"
+          },
+          "adjustmentFrequencyOverridden": {
+            "type": "boolean"
+          },
+          "nextAdjustmentDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "referenceRateIssueDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "fixedDays": {
+            "maximum": 2,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "fixedDaysCountConvention": {
+            "pattern": "CAL|BANK_DAYS",
+            "type": "string"
+          },
+          "collarFloorIncl": {
+            "type": "number"
+          },
+          "collarFloorOverridden": {
+            "type": "boolean"
+          },
+          "collarCapIncl": {
+            "type": "number"
+          },
+          "collarCapOverridden": {
+            "type": "boolean"
+          },
+          "calculateNegativeInterestRate": {
+            "type": "boolean"
+          },
+          "calculateNegativeCustomerRate": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

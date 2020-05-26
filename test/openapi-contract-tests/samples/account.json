@@ -1,0 +1,26 @@
+{
+  "accountNumber": {
+    "bban": "240000108",
+    "iban": "NO36240000108"
+  },
+  "status": "A",
+  "customerId": "50000",
+  "agreementId": "12345",
+  "countryCode": "NO",
+  "currencyCode": "NOK",
+  "profitCenter": "profit centre",
+  "openDate": "2020-01-16",
+  "glDimension": [],
+  "productId": "12345643",
+  "productType": "1234",
+  "iban": "NO36240000108",
+  "productDetails": {
+    "productId": "12345",
+    "productType": "CASA"
+  },
+  "auditDetails": {
+    "createdBy": "AB62939",
+    "createdOnTime": "2020-04-17T10:28:08.624495",
+    "version": 1
+  }
+}

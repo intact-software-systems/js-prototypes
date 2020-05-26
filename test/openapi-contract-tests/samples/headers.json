@@ -1,0 +1,11 @@
+{
+  "Accept": "*/*",
+  "Content-Type": "application/json",
+  "Host": "localhost:4010",
+  "X-EVRY-ESB-SECURITYTOKEN": "header",
+  "X-EVRY-ESB-USERSESSION": "header",
+  "X-EVRY-CLIENT-CLIENTNAME": "CBC",
+  "X-EVRY-ORGANIZATION-ID": "049890976193784678",
+  "X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY": "NOK",
+  "X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2": "NO"
+}

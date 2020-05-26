@@ -1,0 +1,286 @@
+# curl --location --request PATCH 'http://localhost:3000/led/api/v1/account/changeProduct'
+#--header 'X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}'
+#--header 'X-EVRY-CLIENT-CLIENTNAME: CBC'
+#--header 'X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}'
+#--header 'X-EVRY-ORGANIZATION-ID: 049890976193784678'
+#--header 'X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK'
+#--header 'X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO'
+#--header 'Content-Type: application/json'
+#--header 'Accept: */*'
+#--data-raw '{
+#  "iban": "NO9896882507952",
+#  "newProductId": "508482784807684681",
+#  "productType": "CASA",
+# "glDimensions": [
+#       {
+#         "dimensionType": "PRFTCNTR",
+#          "dimensionValue": "54090"
+#       }
+#     ],
+# "version":1
+#}'
+PATCH http://localhost:4010/account/changeProduct
+X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}
+X-EVRY-ORGANIZATION-ID: 049890976193784678
+X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK
+X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO
+Content-Type: application/json
+
+{
+  "iban": "NO9896882507952",
+  "newProductId": "508482784807684681",
+  "productType": "CASA",
+  "glDimensions": [
+    {
+      "dimensionType": "PRFTCNTR",
+      "dimensionValue": "54090"
+    }
+  ],
+  "version": 1
+}
+
+###
+
+
+# curl --location --request GET 'http://localhost:8080/led/api/v1/account/NO36240000108'
+#--header 'X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}'
+#--header 'X-EVRY-CLIENT-CLIENTNAME: CBC'
+#--header 'X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}'
+#--header 'X-EVRY-ORGANIZATION-ID: 049890976193784678'
+#--header 'X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK'
+#--header 'X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO'
+GET http://localhost:4010/account/NO36240000108
+X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}
+X-EVRY-ORGANIZATION-ID: 049890976193784678
+X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK
+X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO
+
+###
+
+
+# curl --location --request GET 'http://localhost:8080/led/api/v1/account'
+#--header 'X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}'
+#--header 'X-EVRY-CLIENT-CLIENTNAME: CBC'
+#--header 'X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}'
+#--header 'X-EVRY-ORGANIZATION-ID: 049890976193784678'
+#--header 'X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK'
+#--header 'X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO'
+GET http://localhost:4010/led/api/v1/account
+X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}
+X-EVRY-ORGANIZATION-ID: 049890976193784678
+X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK
+X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO
+
+###
+
+
+# curl --location --request POST 'http://localhost:8080/led/api/v1/account'
+#--header 'X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}'
+#--header 'X-EVRY-CLIENT-CLIENTNAME: CBC'
+#--header 'X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}'
+#--header 'X-EVRY-ORGANIZATION-ID: 049890976193784678'
+#--header 'X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK'
+#--header 'X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO'
+#--header 'Content-Type: text/plain'
+#--data-raw '{
+#  "currencyCode": "NOK",
+#  "countryCode": "NO",
+#  "productId": "12345",
+#  "productType": "CASA",
+#  "profitCenter": "profit centre",
+#  "agreementId": "12345",
+#  "customerId": "50000",
+#  "openedDate": "2020-01-16",
+#  "accountDescription": "my description",
+#  "iban": "NO36240000107",
+#   "glDimension": [
+#       {
+#         "dimensionType": "PRFTCNTR",
+#          "dimensionValue": "54090"
+#       }
+#     ]
+#}'
+POST http://localhost:4010/account
+Content-Type: application/json
+Accept: */*
+X-EVRY-ESB-SECURITYTOKEN:{"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ESB-USERSESSION:{"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}
+X-EVRY-ORGANIZATION-ID: 049890976193784678
+X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK
+X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO
+
+{
+  "currencyCode": "NOK",
+  "countryCode": "NO",
+  "productId": "12345",
+  "productType": "CASA",
+  "profitCenter": "profit centre",
+  "agreementId": "12345",
+  "customerId": "50000",
+  "openedDate": "2020-01-16",
+  "accountDescription": "my description",
+  "iban": "NO36240000107",
+   "glDimension": [
+       {
+         "dimensionType": "PRFTCNTR",
+          "dimensionValue": "54090"
+       }
+     ]
+}
+
+###
+
+
+# curl --location --request PATCH 'http://localhost:8080/led/api/v1/account/changeProduct'
+#--header 'X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}'
+#--header 'X-EVRY-CLIENT-CLIENTNAME: CBC'
+#--header 'X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}'
+#--header 'X-EVRY-ORGANIZATION-ID: 049890976193784678'
+#--header 'X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK'
+#--header 'X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO'
+#--header 'Content-Type: text/plain'
+#--data-raw '{
+#  "iban": "NO9896882507952",
+#  "newProductId": "508482784807684681",
+#  "productType": "CASA",
+# "glDimensions": [
+#       {
+#         "dimensionType": "PRFTCNTR",
+#          "dimensionValue": "54090"
+#       }
+#     ],
+# "version":1
+#}'
+PATCH http://localhost:8080/led/api/v1/account/changeProduct
+X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D"}
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ESB-USERSESSION: {"authLevel":"2", "bankOrgID":"2096", "client":{"ip":"127.0.0.1", "userAgent":"soapUI"}, "sessionID":"ipY-R_OLbu50WpfCfQKOCO_","userID":"etxxxxx"}
+X-EVRY-ORGANIZATION-ID: 049890976193784678
+X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK
+X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO
+Content-Type: application/json
+
+{
+  "iban": "NO9896882507952",
+  "newProductId": "508482784807684681",
+  "productType": "CASA",
+ "glDimensions": [
+       {
+         "dimensionType": "PRFTCNTR",
+          "dimensionValue": "54090"
+       }
+     ],
+ "version":1
+}
+
+###
+
+GET http://localhost:8080/led/api/v1/account?pageSize=500
+Accept: application/json
+X-EVRY-ESB-USERSESSION: {"authLevel": "2", "bankOrgID": "2096", "client":{"ip": "127.0.0.1", "userAgent": "soapUI" }, "sessionID": "ipY-R_OLbu50WpfCfQKOCO_", "userID": "etxxxxx" }
+X-EVRY-ESB-SECURITYTOKEN: {"tokenType": "EvrySO", "token": "03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D" }
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ORGANIZATION-ID: 049890976193784678
+X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK
+X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO
+
+###
+POST http://localhost:8080/led/api/v1/account
+Accept: application/json
+X-EVRY-ESB-USERSESSION: {"authLevel": "2", "bankOrgID": "2096", "client":{"ip": "127.0.0.1", "userAgent": "soapUI" }, "sessionID": "ipY-R_OLbu50WpfCfQKOCO_", "userID": "etxxxxx" }
+X-EVRY-ESB-SECURITYTOKEN: {"tokenType": "EvrySO", "token": "03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D" }
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ESB-REQUESTCONTEXT:{"customerId" : "13086424584", "userId" : "AB62939", "clientOrgId":"2096", "dataOwnerOrgId": "2096"}
+Content-Type: application/json
+
+{
+  "currencyCode": "NOK",
+  "countryCode": "NO",
+  "productId": "12345",
+  "productType": "CASA",
+  "profitCenter": "profit centre",
+  "agreementId": "12345",
+  "customerId": "50000",
+  "creationDate": "2020-01-16",
+  "accountDescription": "my description",
+  "iban": "NO36240000107",
+  "glDimensionRequest": [
+    {
+      "dimensionType": "PRFTCNTR",
+      "dimensionValue": "54090"
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/led/api/v1/account?pageToken=1
+X-EVRY-ESB-SECURITYTOKEN: {"tokenType":"EvrySO", "token":"dummyToken"}
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ESB-REQUESTCONTEXT: {"customerId" : "13086424584", "userId" : "AB62939", "clientOrgId":"2096", "dataOwnerOrgId": "2096"}
+Content-Type: application/json
+
+###
+POST http://localhost:8080/led/api/v1/account
+accept: */*
+X-EVRY-ESB-USERSESSION:{"authLevel": "2", "bankOrgID": "2096", "client":{"ip": "127.0.0.1", "userAgent": "soapUI" }, "sessionID": "ipY-R_OLbu50WpfCfQKOCO_", "userID": "etxxxxx" }
+X-EVRY-ESB-SECURITYTOKEN:{"tokenType": "EvrySO", "token": "03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D" }
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ORGANIZATION-ID: 049890976193784678
+X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK
+X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO
+Content-Type: application/json
+
+{
+  "currencyCode": "NOK",
+  "countryCode": "NO",
+  "productId": "12345",
+  "productType": "CASA",
+  "profitCenter": "profit centre",
+  "agreementId": "12345",
+  "customerId": "50000",
+  "openedDate": "2020-01-16",
+  "accountDescription": "my description",
+  "iban": "NO36240000108",
+  "glDimension": [
+    {
+      "dimensionType": "PRFTCNTR",
+      "dimensionValue": "54090"
+    }
+  ]
+}
+
+####
+GET http://localhost:5000/v1/validate/service/fwa
+x-mona-client-privileges-id: "hello"
+
+###
+
+PATCH http://localhost:8080/led/api/v1/account/changeProduct
+accept: */*
+X-EVRY-ESB-USERSESSION:{"authLevel": "2", "bankOrgID": "2096", "client":{"ip": "127.0.0.1", "userAgent": "soapUI" }, "sessionID": "ipY-R_OLbu50WpfCfQKOCO_", "userID": "etxxxxx" }
+X-EVRY-ESB-SECURITYTOKEN:{"tokenType": "EvrySO", "token": "03111012010400425HK1mhgx5ebF6OVtVL1neI9CfuAtjCBO603eS0IgWm1WWIO7EfpSL4DE%2FlDFi69n1sSaabKNt2t%2BxJppso23a37EmmmyjbdrfLhDLrH4G0bip4OgJFr19UE%2Bt0RA6vQQ%2BsSaabKNt2t%2FXzlyjxYnxhcG46wcbIKp%2FsSaabKNt2t9wBUG0SyIoqFfig80Gq4uXVBtimDzTiu3EfQIWD5xMfhsbDu83H0lmDXcuWUsP7RU%3DJWuJYJZFG3e4Y87y4X9%2BbJQIQq4zYzMAMU6%2BedVRHOhxY5LmhdwLjmJJNXJf9p5RgbJIhznf2zUy83gLRUsP%2FZ6CQ4%2F2vVDI8xGvs6CPoo8IYBzYaUgZ7syfa2NDKgtfwnIwfonn3YS5lRneDUokzJiiMXcPVrQ1ZoGeSBMkrTo%3D" }
+X-EVRY-CLIENT-CLIENTNAME: CBC
+X-EVRY-ORGANIZATION-ID: 049890976193784678
+X-EVRY-ORGANIZATION-BANK-LOCAL-CURRENCY: NOK
+X-EVRY-ORGANIZATION-COUNTRY-CODE-ALPHA2: NO
+Content-Type: application/json
+
+{
+  "iban": "NO9896882507952",
+  "newProductId": "508482784807684681",
+  "productType": "CASA",
+  "glDimensions": [
+    {
+      "dimensionType": "PRFTCNTR",
+      "dimensionValue": "54090"
+    }
+  ],
+  "version": 1
+}

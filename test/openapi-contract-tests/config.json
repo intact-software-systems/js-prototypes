@@ -1,0 +1,5 @@
+{
+  "hostname": "http://127.0.0.1:8080",
+  "path": "/led/api/v1/openapi.json",
+  "prismUrl": "http://localhost:4010"
+}
