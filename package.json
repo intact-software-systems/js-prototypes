@@ -16,7 +16,7 @@
     "sanctuary-maybe": "latest",
     "serve-favicon": "^2.5.0",
     "websocket": "^1.0.31",
-    "ws": "^7.2.1"
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "cookie-parser": "^1.4.4",
