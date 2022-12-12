@@ -4,7 +4,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "newman": "^5.0.1",
     "node-fetch": "^2.6.0",
     "openapi-enforcer": "^1.10.4",
